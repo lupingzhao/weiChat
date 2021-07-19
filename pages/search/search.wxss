@@ -30,10 +30,7 @@
 .close1 {
   display: none;
 }
-.img{
-  width: 40rpx;
-  height: 40rpx;
-}
+
 .fixed{
   position: fixed;
   background-color: #fff;

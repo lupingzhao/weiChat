@@ -1,6 +1,8 @@
 {
   "usingComponents": {
-    "goods":"/components/goods/goods"
+    "goods":"/components/goods/goods",
+    "hot":"/components/hot/hot",
+    "searchHistory":"/components/searchHistory/searchHistory"
   },
   "navigationBarTitleText": "搜索"
 }

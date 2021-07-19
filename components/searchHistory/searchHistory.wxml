@@ -1,0 +1,15 @@
+
+ <view wx:if='{{searchHistroy}}'>
+      <view class="flex jcsb  font-s-14 p-10">
+        <view>历史记录</view>
+        <view class="flex  " style="color:#ed840e" bindtap="delAll">
+          <image src="/assets/huisou.png" class="img  mr-5"></image>
+          <view>清空</view>
+        </view>
+      </view>
+      <view class="flex jcsb p-10 font-s-12 " wx:for="{{searchHistroy}}" wx:key='index' data-item="{{item}}"
+        bindtap="searchHistroy">
+        <view>{{item}}</view>
+        <view class="m-r-15" catchtap="delSingle" data-index="{{item}}">x</view>
+      </view>
+    </view>

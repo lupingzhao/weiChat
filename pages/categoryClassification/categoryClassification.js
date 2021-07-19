@@ -26,9 +26,8 @@ Page({
   getData() {
     // console.log(this.data.start)
     // 页面数据
-    api.classification.getCatsBooks(this.data.gender, this.data.type, this.data.major, this.data.minor, this.data.start).then((res) => {
-        
-        // console.log(res)
+    api.classification.getCatsBooks(this.data.gender, this.data.type, this.data.major, this.data.minor, this.data.start).then((res) => {   
+        console.log(res)
         this.setData({
           data: this.data.data.concat(res.books),
           total: res.total
@@ -54,7 +53,8 @@ Page({
     this.setData({
       categoryActive: e.currentTarget.dataset.index[1],
       data: [],
-      type: e.currentTarget.dataset.index[0]
+      type: e.currentTarget.dataset.index[0],
+      msg:''
     })
     this.getData()
   },
@@ -65,6 +65,7 @@ Page({
     this.setData({
       category1Active: e.currentTarget.dataset.index,
       data: [],
+      msg:''
       // minor: this.data.category1[this.data.category1Active],
     })
     if(e.currentTarget.dataset.index>0){

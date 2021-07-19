@@ -1,4 +1,5 @@
-<view class="p-10 " wx:if='{{list.length>0}}'>
+<view class="p-10 ">
+
   <view wx:for="{{list}}" wx:key='index' class="flex p-tb-10 border-b a-i-fs" bindtap="click" data-item="{{item._id}}">
     <view class="img">
       <image src='{{imagesPath+item.cover}}'></image>
@@ -24,8 +25,7 @@
 
     </view>
   </view>
+
   <view class="t-a-c p-tb-10 finish">{{msg}}</view>
-</view>
-<view class="p-10 t-a-c" wx:else>
-未检索到该记录
+
 </view>

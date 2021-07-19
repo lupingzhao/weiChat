@@ -1,0 +1,6 @@
+/* components/searchHistory/searchHistory.wxss */
+@import '/utils/common.wxss';
+.img{
+  width: 40rpx;
+  height: 40rpx;
+}

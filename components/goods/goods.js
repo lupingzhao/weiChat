@@ -12,7 +12,7 @@ Component({
       type: Number
     },
     msg: {
-      type: String
+      type: String,
     },
     true1:{
       type:Boolean,
@@ -25,8 +25,8 @@ Component({
    */
   data: {
     imagesPath: api.STATIC_HOST,
-    rgb:[]
-
+    rgb:[],
+    msg:"暂无数据"
   },
 
   /**
@@ -34,7 +34,7 @@ Component({
    */
   methods: {
     click(e) {
-      // console.log(this.properties.list)
+
       // console.log(e.currentTarget.dataset.item)
       wx.navigateTo({
         url: '/pages/details/details',
@@ -42,9 +42,9 @@ Component({
       wx.setStorageSync('details', e.currentTarget.dataset.item)
     }
   },
-  lifetimes: {
+  lifetimes: {     
     ready() {
-      // console.log(this.properties.list)
+      console.log(this.properties.list)
       // console.log(this.data.imagesPath)
       // 随机标签色
       let rgb = []

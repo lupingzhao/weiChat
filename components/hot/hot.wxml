@@ -1,0 +1,13 @@
+<view>
+  <view class="flex jcsb font-s-14 p-10  ">
+    <view>大家都在搜</view>
+    <view class="flex" style="color:#ed840e" bindtap="change">
+      <image src="/assets/huan.png" class="img  mr-5"></image>
+      <view> 换一换</view>
+    </view>
+  </view>
+  <view class="flex flex-wrap font-s-12 font-c-w">
+    <view wx:for="{{hot}}" wx:key='index' data-id="{{item.book}}" bindtap="hotword" class="p-5 m-5-10"
+      style="background-color: rgb({{a[index]}})">{{item.word}}</view>
+  </view>
+</view>
