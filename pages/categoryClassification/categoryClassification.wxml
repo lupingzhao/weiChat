@@ -1,0 +1,20 @@
+<view class="flex p-10 border-b ">
+  <!-- 大分类 -->
+  <view wx:for="{{typeList}}" wx:key='index' class="category font-s-14 {{categoryActive===index?'red':''}}"
+    bindtap="categoryActive" data-index="{{[item.id,index]}}">{{item.name}}</view>
+  <!-- 小分类 -->
+</view>
+
+<scroll-view scroll-x="true" style="width:100%" class=" scroll flex">
+  <view class="flex category1 border-b  font-s-14 ">
+    <view wx:for="{{category1}}" wx:key='index' class="category1-1 {{category1Active===index?'red':''}}"
+      bindtap="category1Active" data-index="{{index}}">{{item}}
+    </view>
+  </view>
+</scroll-view>
+
+
+<!-- 图书 -->
+<view>
+  <goods wx:if="{{data.length>0}}" list='{{data}}' total='{{total}}' msg='{{msg}}'></goods>
+</view>

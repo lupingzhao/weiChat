@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "cityChild":"../../components/cityChild/cityChild"
+  },
+  "navigationBarTitleText":"书城"
+}

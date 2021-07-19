@@ -1,0 +1,133 @@
+/* pages/details/details.wxss */
+@import '/utils/common.wxss';
+
+.img {
+  width: 30%;
+  height: 300rpx;
+  margin: auto;
+}
+
+.recom image {
+  width: 200rpx;
+  height: 300rpx;
+  margin-right: 10rpx;
+}
+
+.img image {
+  height: 100%;
+  width: 100%;
+}
+
+.head {
+  height: 150rpx;
+  background-color: rgb(203, 28, 54);
+}
+
+.empt {
+  height: 30rpx;
+  width: 100%;
+  border-bottom: solid 2rpx #b3b1b1;
+}
+
+.btn {
+  padding: 10rpx 10rpx;
+  width: 25%;
+  text-align: center;
+  border-radius: 20rpx;
+  font-size: 14px;
+  color: rgb(243, 233, 233);
+  margin: -35rpx 20rpx 0 20rpx;
+}
+
+.bgc {
+  background-color: rgb(203, 28, 54);
+}
+
+.rate {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.chapter {
+  color: rgb(24, 230, 213);
+  width: 80%;
+}
+
+/* 选中的下划线 */
+.selected {
+  color: rgb(197, 29, 29);
+  border-bottom: 3rpx solid rgb(197, 29, 29);
+}
+
+.tab {
+  width: 90%;
+  margin: auto;
+  padding-bottom: 20rpx;
+  background-color: #f5f5f5;
+}
+
+.mulu {
+  width: 95%;
+  background-color: #f5f5f5;
+  padding: 10rpx;
+}
+
+.duzhe {
+  width: 100rpx;
+  height: 100rpx;
+
+}
+
+.duzheBOX {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 10rpx;
+  margin-right: 10rpx;
+}
+
+.box {
+  padding: 15rpx 10rpx;
+  border-bottom: gray 2rpx solid;
+}
+
+.nr {
+  margin-left: 10rpx;
+  width: 70%;
+}
+
+.hyh {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.pos {
+  position: absolute;
+  bottom: 0;
+}
+
+.author {
+  padding-bottom: 40rpx;
+  border-bottom: solid 2rpx #b3b1b1;
+}
+
+.show1 {
+  background-color:rgb(red, green, blue);
+  background-color: rgb(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.show1 image{
+  width: 400rpx;
+  height: 550rpx;
+}
+.scroll{
+  overflow: scroll;
+}

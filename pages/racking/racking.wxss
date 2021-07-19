@@ -1,0 +1,6 @@
+/* pages/racking/racking.wxss */
+@import '/utils/common.wxss';
+.red{
+  color: red;
+  border-bottom: 1px solid red;
+}

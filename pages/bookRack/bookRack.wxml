@@ -1,0 +1,29 @@
+<view class="p-10 flex jcsb">
+  <view bindtap="rotate">
+    <image wx:if="{{!show}}" src="/assets/eidt.png" class="icon1"></image>
+    <image wx:else src="/assets/select.png" class="icon1"></image>
+  </view>
+  <view class="flex">
+    <view class="m-r-15 helf" bindtap="gohelf">帮助</view>
+    <view>
+      <image src="/assets/refresh.png" class="icon"></image>
+    </view>
+  </view>
+
+</view>
+
+
+<view class="flex flex-wrap box1 div" wx:if="{{data}}">
+  <!-- 单独的书 -->
+  <view wx:for="{{data}}" wx:key='index' class="box pos-rel boxn" bindtap="click" data-item="{{item._id}}">
+    <image src="{{url+item.cover}}" class="{{show?'dh':''}}"></image>
+    <view class="delx dh" wx:if="{{show}}" catchtap="delBook" data-item="{{item}}">
+      <image src="/assets/close.png" class="icon2 dh1"></image>
+    </view>
+    <view class="ellipsis-2">{{item.lastChapter}}</view>
+
+  </view>
+</view>
+<view class="t-a-c p-10 font-s-12" wx:else>
+主人还没有收藏书籍哦，请去书城添加...
+</view>

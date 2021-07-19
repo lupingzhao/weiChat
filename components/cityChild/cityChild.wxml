@@ -1,0 +1,20 @@
+<view wx:if="{{ activeindex===0 }}">
+  <view wx:for="{{list}}" wx:key='index'>
+    <view class="sex">{{item.title}}</view>
+    <view class="classify flex flex-wrap ">
+      <view class="width-33 t-a-c " wx:for="{{item.data}}" wx:for-item="a" wx:for-index="index1" wx:key='index1' bindtap="categrory" data-item='{{[index,a.name,index1]}}' >
+        <view class="titile">{{a.name}}</view>
+        <view class="x-titile">{{a.bookCount}}本</view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 排行 -->
+<view wx:else>
+  <view wx:for="{{ranking}}" wx:key='index'>
+    <view class="sex">{{item.name}}</view>
+    <view class="hot" wx:for="{{item.data}}" wx:for-item="a" wx:for-index="index1" wx:key='index1' bindtap="rank" data-item="{{[item.data[index1]._id,a.title]}}">
+    <image src="{{imagesPath+a.cover}}" class="img"></image>
+    {{a.title}}</view>
+  </view>
+</view>

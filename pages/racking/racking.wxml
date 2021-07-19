@@ -1,0 +1,8 @@
+<view class="flex jcc bgc-low-gray">
+  <view wx:for="{{title}}" wx:key='index' class="width-33 flex jcc " bindtap="switch" data-index="{{index}}">
+    <view class=" width-fit p-tb-10 {{active===index?'red':''}}">{{item}}</view>
+  </view>
+</view>
+<view class="p-tb-10">
+<goods wx:if="list" list='{{list}}'></goods>
+</view>

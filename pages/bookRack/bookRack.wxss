@@ -1,0 +1,77 @@
+/* pages/bookRack/bookRack.wxss */
+.icon{
+  width: 60rpx;
+  height: 60rpx;
+}
+.icon1{
+  width: 50rpx;
+  height: 50rpx;
+}
+.helf{
+  padding: 10rpx;
+  width: 100rpx;
+  text-align: center;
+  border: 2rpx solid gray;
+  border-radius: 12rpx;
+}
+.box{
+  width: 31%;
+  font-size: 12px;
+  margin: 1%
+}
+.box image{
+  width: 100%;
+  height: 350rpx;
+  /* animation: sack 5s linear 0 infinite alternate; */
+
+}
+.delx{
+  position: absolute;
+  top: 0;
+  right: 0;
+
+}
+.box .icon2{
+  width: 60rpx;
+  height: 60rpx;
+}
+
+/* 抖动 */
+.dh{
+   animation: sack 2s infinite linear;
+  /* animation-name: sack;
+  animation-duration: 4s;
+  animation-iteration-count: infinite; */
+}
+.dh1{
+  animation: sack1 2s  infinite linear;
+}
+@keyframes sack {
+  0%   {  transform: rotate(0);   }
+  25%  {transform: rotate(2deg);}
+  50% {transform: rotate(0);}
+  70% {transform: rotate(-2deg);}
+  100% {transform: rotate(0);}
+}
+@keyframes sack1 {
+  0%   {  transform: rotate(0);   }
+  25%  {transform: rotate(10deg);}
+  50% {transform: rotate(0);}
+  70% {transform: rotate(-10deg);}
+  100% {transform: rotate(0);}
+}
+
+.ellipsis-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+
+/* div类名下的 第2个boxn类名的盒子 */
+/* .div .boxn:nth-child(2) {
+      color: aqua;
+  } */
+
+

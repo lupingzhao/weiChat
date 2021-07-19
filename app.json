@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/bookRack/bookRack",
+    "pages/bookCity/bookCity",
+    "pages/search/search",
+    "pages/my/my",
+    "pages/details/details",
+    "pages/terms/terms",
+    "pages/categoryClassification/categoryClassification",
+    "pages/racking/racking"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#CB1C36",
+    "navigationBarTitleText": "小说阅读神器",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#cdcdcd",
+    "selectedColor": "#1296db",
+    "list": [
+      {
+        "text": "书架",
+        "pagePath": "pages/bookRack/bookRack",
+        "iconPath": "assets/rack.png",
+        "selectedIconPath": "assets/rack-active.png"
+      },
+      {
+        "text": "书城",
+        "pagePath": "pages/bookCity/bookCity",
+        "iconPath": "assets/city.png",
+        "selectedIconPath": "assets/city-active.png"
+      },
+      {
+        "text": "搜索",
+        "pagePath": "pages/search/search",
+        "iconPath": "assets/search.png",
+        "selectedIconPath": "assets/search-active.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/my/my",
+        "iconPath": "assets/my.png",
+        "selectedIconPath": "assets/my-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

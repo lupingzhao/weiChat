@@ -1,0 +1,31 @@
+<view class="p-10 " wx:if='{{list.length>0}}'>
+  <view wx:for="{{list}}" wx:key='index' class="flex p-tb-10 border-b a-i-fs" bindtap="click" data-item="{{item._id}}">
+    <view class="img">
+      <image src='{{imagesPath+item.cover}}'></image>
+    </view>
+    <view class="p-lr-10  size   ">
+      <view>
+        {{item.title}}
+      </view>
+      <view class="font-s-14 m-tb-10 font-c-gray">
+        {{item.author}}
+      </view>
+      <view class="info ellipsis-4 ">
+        {{item.shortIntro}}
+      </view>
+
+      <view class="flex font-s-12 m-tb-10 ">
+     <view class="mr-5 p-5" style="background-color: rgb({{rgb[index]}})" wx:if="{{index<3}}" wx:for="{{item.tags}}" wx:for-item="a" wx:key='index'> {{a}}</view>
+      </view>
+
+      <view class=" m-tb-10" wx:if="{{true1}}" style="color:#ed840e" >
+        最近收藏：{{item.latelyFollower}}
+      </view>
+
+    </view>
+  </view>
+  <view class="t-a-c p-tb-10 finish">{{msg}}</view>
+</view>
+<view class="p-10 t-a-c" wx:else>
+未检索到该记录
+</view>

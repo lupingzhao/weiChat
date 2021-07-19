@@ -1,0 +1,9 @@
+<view class="flex t-a-c city fixed">
+  <view class="width-50 flex jcc" wx:for="{{title}}" wx:key='index' bindtap="swictth" data-index='{{index}}'>
+    <view class="p-tb-10 width-fit {{activeindex===index?'selected':''}}">{{item}}</view>
+  </view>
+</view>
+
+<view style="  margin-top: 90rpx">
+<cityChild activeindex='{{activeindex}}'></cityChild>
+</view>
