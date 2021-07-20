@@ -5,9 +5,7 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
   },
-
   /**
    * 组件的初始数据
    */
@@ -17,7 +15,6 @@ Component({
     // 随机色
     a: ''
   },
-
   /**
    * 组件的方法列表
    */
@@ -28,7 +25,8 @@ Component({
       api.book.hotWord().then(res => {
         // console.log(res.newHotWords)
         this.setData({
-          hot: res.newHotWords
+          hot: res.newHotWords,
+          hot1: res.newHotWords
         })
       }).catch()
     },
@@ -49,7 +47,9 @@ Component({
           hot: this.data.hot.slice(a)
         })
       } else {
-        this.hot()
+       this.setData({
+         hot:this.data.hot1
+       })
       }
     },
     // 生成随机数的方法

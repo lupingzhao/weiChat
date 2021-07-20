@@ -31,7 +31,7 @@ Page({
     this.one()
   },
   // 详情
-  one(e) {
+  one() {
     // 书籍详情接口
     // 书籍详情接口
     api.book.bookInfo(this.data.id).then(res => {
@@ -39,6 +39,8 @@ Page({
       this.setData({
         data: res,
       })
+      // 检查是否已加入书架
+      this.check()
       wx.setNavigationBarTitle({
         title: res.title,
       })
@@ -118,13 +120,19 @@ Page({
   // 判断是否已加入书架
   check() {
     let data = wx.getStorageSync('rackHistory')
+    // let flag=false
     if(data.length>0){
       data.map(a => {
         if (a._id === this.data.id) {
           this.setData({
             add: '已加入书架',
             add1: true
-          })
+          })  
+        }else{
+          this.setData({
+            add: '加入书架',
+            add1: false
+          })  
         }
       })
     }

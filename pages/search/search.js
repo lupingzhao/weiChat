@@ -51,7 +51,6 @@ Page({
   },
   // 清除输入框的值
   delValue() {
-    console.log(11)
     this.setData({
       value: '',
       close: true,

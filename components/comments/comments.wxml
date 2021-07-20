@@ -26,10 +26,13 @@
           </view>
         </view>
         <scroll-view scroll-x="true" style="width:100%" class=" scroll">
-          <view class="flex">
-            <view class=" flex-1 recom" wx:for="{{recommendedBook}}" wx:key='index' bindtap="goDetails"
-              data-item="{{item}}">
+          <view class="flex jcsb">
+            <view class="recom " wx:for="{{recommendedBook}}" wx:key='index' bindtap="goDetails"
+              data-item="{{item}}">      
               <image src="{{url+item.cover}}"></image>
+              <view class="t-a-c title">
+              {{item.title}}
+              </view>
             </view>
           </view>
         </scroll-view>

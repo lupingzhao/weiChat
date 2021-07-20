@@ -66,6 +66,7 @@
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+  height: 70rpx;
 }
 
 
@@ -74,4 +75,6 @@
       color: aqua;
   } */
 
-
+.border1{
+  padding: 5rpx;
+}
