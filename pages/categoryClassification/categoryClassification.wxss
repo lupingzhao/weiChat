@@ -5,10 +5,10 @@
   margin-right: 16rpx;
 }
 .category1-1{
-  margin-right: 10rpx;
+  margin-right: 15rpx;
 }
 .category1{
-  padding: 20rpx 10rpx;
+  padding: 20rpx 15rpx;
 }
 .scroll{
   display: flex;

@@ -51,6 +51,7 @@ Page({
   },
   // 清除输入框的值
   delValue() {
+    console.log(11)
     this.setData({
       value: '',
       close: true,
@@ -60,8 +61,22 @@ Page({
     })
   },
 
-  // 监听输入框的值
+  // 实时监听输入框的值
   bindKeyInput(e) {
+    this.setData({
+      value: e.detail.value
+    })
+    // 手动删除输入框的值 不按删除键
+    if (!e.detail.value) {
+      this.setData({
+        close: true,
+        show: true,
+        searchHistroy: utils.getHistory('search')
+      })
+    } 
+  },
+  // 按下确认键保存历史并且 搜索
+  bindKeyInput1(e) {
     this.setData({
       value: e.detail.value
     })
@@ -75,7 +90,6 @@ Page({
     } else {
       this.search()
     }
-
   },
   /**
    * 生命周期函数--监听页面加载

@@ -44,7 +44,7 @@ Component({
   },
   lifetimes: {     
     ready() {
-      console.log(this.properties.list)
+      // console.log(this.properties.list)
       // console.log(this.data.imagesPath)
       // 随机标签色
       let rgb = []

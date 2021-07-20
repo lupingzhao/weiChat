@@ -10,36 +10,28 @@ Page({
     add: '加入书架',
     add1: false,
     sum: 5,
-    title: ['详情', '评价(0)'],
-    activeindex: 0,
     data: '',
     url: api.STATIC_HOST,
-    // 全部推荐
-    recommended: '',
-    // 三个推荐
-    recommendedBook: '',
     // 推荐id
-    id: '',
-    comment: [],
+    id: "",
     show1: false,
-    page: 1,
-    total: 0
   },
-  swictth(e) {
-    this.setData({
-      activeindex: e.currentTarget.dataset.index
+  // 去阅读
+  goRead() {
+    wx.navigateTo({
+      url: `/pages/read/read?name=${this.data.data.title}&id=${this.data.id}`,
     })
   },
   // 推荐去详情
   goDetails(e) {
+    // console.log(e.detail)
     this.setData({
-      id: e.currentTarget.dataset.item._id
+      id: e.detail
     })
     this.one()
-
   },
   // 详情
-  one() {
+  one(e) {
     // 书籍详情接口
     // 书籍详情接口
     api.book.bookInfo(this.data.id).then(res => {
@@ -51,20 +43,7 @@ Page({
         title: res.title,
       })
       this.rateSum(res.rating.score)
-      this.RecommendedBooks()
-      this.comment()
-    }).catch()
-  },
-  // 相关推荐
-  RecommendedBooks() {
-    api.book.relatedRecommendedBooks(this.data.id).then(res => {
-      // console.log(res)
-      this.setData({
-        recommended: res.books
-      })
-      this.setData({
-        recommendedBook: this.data.recommended.slice(0, 3)
-      })
+
     }).catch()
   },
   // 评分
@@ -73,17 +52,6 @@ Page({
     this.setData({
       sum: parseInt(Math.ceil(a) / 2)
     })
-  },
-  // 评价
-  comment() {
-    api.comment.shortReviews(this.data.id, this.data.page).then(res => {
-      console.log(res)
-      this.setData({
-        comment: this.data.comment.concat(res.docs),
-        total: res.total,
-        title: ['详情', `评价(${res.total})`],
-      })
-    }).catch()
   },
   // 标签点击 加入书架
   click() {
@@ -112,15 +80,6 @@ Page({
       })
     }
 
-  },
-  // 换一换
-  change() {
-    // 生成随机数
-    let a = Math.floor(Math.random() * (this.data.recommended.length - 2))
-    // console.log(this.data.recommended.slice(17, 20))
-    this.setData({
-      recommendedBook: this.data.recommended.slice(a, a + 3)
-    })
   },
   // 保存图片到本地
   save(e) {
@@ -156,26 +115,20 @@ Page({
       show1: !this.data.show1
     })
   },
-  // 评论触底 加载更多
-  commentBottom(e) {
-    if (this.data.activeindex === 1) {
-      this.data.page++
-      if (this.data.total >= this.data.comment.length) {
-        this.comment()
-      }
-    }
-  },
   // 判断是否已加入书架
   check() {
     let data = wx.getStorageSync('rackHistory')
-    data.map(a => {
-      if (a._id === this.data.id) {
-        this.setData({
-          add:'已加入书架',
-          add1:true
-        })
-      }
-    })
+    if(data.length>0){
+      data.map(a => {
+        if (a._id === this.data.id) {
+          this.setData({
+            add: '已加入书架',
+            add1: true
+          })
+        }
+      })
+    }
+   
   },
   /**
    * 生命周期函数--监听页面加载
@@ -197,6 +150,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+   
+   
 
   },
 

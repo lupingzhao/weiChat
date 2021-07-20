@@ -1,0 +1,54 @@
+<view class="tab ">
+  <view class="flex t-a-c" style="border: solid 2rpx #b3b1b1;  border-radius: 15rpx;">
+    <view class="width-50 flex jcc" wx:for="{{title}}" wx:key='index' bindtap="swictth" data-index='{{index}}'>
+      <view class="p-tb-10 width-fit {{activeindex===index?'selected':''}}">{{item}}</view>
+    </view>
+  </view>
+  <view class="p-10 bgc-white font-s-12 content" style="height: 720rpx;">
+    <scroll-view scroll-y="true" style='height:100%' bindscrolltolower='commentBottom'>
+      <!-- 详情 -->
+      <view wx:if="{{activeindex===0}}">
+
+        <view style="line-height: 45rpx;">
+          <text class="font-w-7">简介：</text> {{longIntro}}
+        </view>
+        <!-- 目录 -->
+        <view class="flex a-i-c m-tb-10 jcc mulu">
+          <image src="/assets/mulu.png" class="rate mr-5"></image>
+          总目录（{{chaptersCount}}章）
+        </view>
+        <!-- 推荐 -->
+        <view class="flex font-s-14 jcsb m-tb-10">
+          <view>大家都在看</view>
+          <view class="flex" style="color:#ed840e" bindtap="change">
+            <image src="/assets/huan.png" class="hyh  mr-5"></image>
+            <view> 换一换</view>
+          </view>
+        </view>
+        <scroll-view scroll-x="true" style="width:100%" class=" scroll">
+          <view class="flex">
+            <view class=" flex-1 recom" wx:for="{{recommendedBook}}" wx:key='index' bindtap="goDetails"
+              data-item="{{item}}">
+              <image src="{{url+item.cover}}"></image>
+            </view>
+          </view>
+        </scroll-view>
+
+      </view>
+      <!-- 评价 -->
+      <view wx:if="{{activeindex===1}}" class="scroll">
+        <view wx:for="{{comment}}" wx:key="index" class="flex box a-i-fs">
+          <view class="duzheBOX">
+            <image src="{{url+item.author.avatar}}" alt="" class="duzhe"> </image>
+          </view>
+          <view class="nr">
+            <view>{{item.author.nickname}}</view>
+            <view class="font-s-12 m-t-5">{{item.content}}</view>
+          </view>
+
+        </view>
+        <view class="t-a-c" wx:if="{{comment.length>=total}}">已经到底了</view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

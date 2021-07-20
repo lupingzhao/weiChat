@@ -38,26 +38,26 @@
 
 /* 抖动 */
 .dh{
-   animation: sack 2s infinite linear;
+   animation: sack 1s linear infinite;
   /* animation-name: sack;
   animation-duration: 4s;
   animation-iteration-count: infinite; */
 }
 .dh1{
-  animation: sack1 2s  infinite linear;
+  animation: sack1 1s linear infinite;
 }
 @keyframes sack {
   0%   {  transform: rotate(0);   }
-  25%  {transform: rotate(2deg);}
+  25%  {transform: rotate(1deg);}
   50% {transform: rotate(0);}
-  70% {transform: rotate(-2deg);}
+  70% {transform: rotate(-1deg);}
   100% {transform: rotate(0);}
 }
 @keyframes sack1 {
   0%   {  transform: rotate(0);   }
-  25%  {transform: rotate(10deg);}
+  25%  {transform: rotate(5deg);}
   50% {transform: rotate(0);}
-  70% {transform: rotate(-10deg);}
+  70% {transform: rotate(-5deg);}
   100% {transform: rotate(0);}
 }
 

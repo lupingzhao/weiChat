@@ -95,7 +95,6 @@ export default {
     },
   },
   bookList: {
-
     lists() {
       return http.get(`/book-list`)
     },

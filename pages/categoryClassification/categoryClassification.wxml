@@ -5,8 +5,8 @@
   <!-- 小分类 -->
 </view>
 
-<scroll-view scroll-x="true" style="width:100%" class=" scroll flex" wx:if="{{category1.length>1}}">
-  <view class="flex category1 border-b  font-s-14 ">
+<scroll-view scroll-x="true" style="width:100%" class=" scroll flex border-b " wx:if="{{category1.length>1}}">
+  <view class="flex category1  font-s-14 ">
     <view wx:for="{{category1}}" wx:key='index' class="category1-1 {{category1Active===index?'red':''}}"
       bindtap="category1Active" data-index="{{index}}">{{item}}
     </view>

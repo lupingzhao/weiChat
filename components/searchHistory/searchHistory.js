@@ -37,7 +37,6 @@ Component({
         searchHistroy: utils.getHistory('search')
       })
       // this.setData({searchHistroy:this.data.searchHistroy.splice(index,1)})
-
     },
     // 清空全部记录
     delAll() {
@@ -47,7 +46,6 @@ Component({
         searchHistroy: utils.getHistory('search')
       })
     },
-
   },
   lifetimes: {
     ready() {

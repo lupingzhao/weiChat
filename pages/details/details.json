@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "comments":"/components/comments/comments"
+  },
   "navigationBarTitleText": "详情"
 }

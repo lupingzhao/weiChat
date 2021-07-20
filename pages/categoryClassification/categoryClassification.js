@@ -27,7 +27,7 @@ Page({
     // console.log(this.data.start)
     // 页面数据
     api.classification.getCatsBooks(this.data.gender, this.data.type, this.data.major, this.data.minor, this.data.start).then((res) => {   
-        console.log(res)
+        // console.log(res)
         this.setData({
           data: this.data.data.concat(res.books),
           total: res.total

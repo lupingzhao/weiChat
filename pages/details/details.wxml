@@ -4,13 +4,14 @@
       <image src="{{url+data.cover}}"></image>
     </view>
     <view class="font-s-14 font-w-7 t-a-c m-tb-10">{{data.title}}</view>
-    <view class="font-s-14 t-a-c author">{{data.author}}</view> 
-    <view class="bgc-low-gray p-b-10 " >
-     <!-- 开始阅读 -->
+    <view class="font-s-14 t-a-c author">{{data.author}}</view>
+    <view class="bgc-low-gray p-b-10 ">
+      <!-- 开始阅读 -->
       <view class="flex jcc ">
-        <view class="btn bgc">开始阅读 </view>
+        <view class="btn bgc" bindtap="goRead">开始阅读 </view>
         <view class="btn bgc-gray" bindtap="click"> {{add}}</view>
       </view>
+
       <!-- 评分 -->
       <view class="flex jcc m-tb-10">
         <image src="/assets/rate.png" class="rate mr-5" wx:for='{{sum}}' wx:key='index'></image>
@@ -20,66 +21,16 @@
         <view>更新至</view>
         <view class="chapter ellipsis t-a-c">{{data.lastChapter}}</view>
       </view>
+
       <!-- 详情 评价 -->
-      <view class="" >
-        <view class="tab ">
-          <view class="flex t-a-c" style="border: solid 2rpx #b3b1b1;  border-radius: 15rpx;">
-            <view class="width-50 flex jcc" wx:for="{{title}}" wx:key='index' bindtap="swictth" data-index='{{index}}'>
-              <view class="p-tb-10 width-fit {{activeindex===index?'selected':''}}">{{item}}</view>
-            </view>
-          </view>
-          <view class="p-10 bgc-white font-s-12 content" style="height: 720rpx;">
-            <scroll-view scroll-y="true" style='height:100%' bindscrolltolower='commentBottom' >
-              <!-- 详情 -->
-              <view wx:if="{{activeindex===0}}">
+      <comments wx:if="{{data.longIntro}}"  longIntro="{{data.longIntro}}" chaptersCount="{{data.chaptersCount}}" bindgoDetails="goDetails"></comments>
 
-                <view style="line-height: 45rpx;">
-                  <text class="font-w-7">简介：</text> {{data.longIntro}}
-                </view>
-                <!-- 目录 -->
-                <view class="flex a-i-c m-tb-10 jcc mulu">
-                  <image src="/assets/mulu.png" class="rate mr-5"></image>
-                  总目录（{{data.chaptersCount}}章）
-                </view>
-                <!-- 推荐 -->
-                <view class="flex font-s-14 jcsb m-tb-10">
-                <view>大家都在看</view>
-                  <view class="flex" style="color:#ed840e" bindtap="change">
-                    <image src="/assets/huan.png" class="hyh  mr-5"></image>
-                    <view> 换一换</view>
-                  </view>
-                </view>
-                <scroll-view scroll-x="true" style="width:100%" class=" scroll">
-                  <view class="flex">
-                    <view class=" flex-1 recom" wx:for="{{recommendedBook}}" wx:key='index' bindtap="goDetails"
-                      data-item="{{item}}">
-                      <image src="{{url+item.cover}}"></image>
-                    </view>
-                  </view>
-                </scroll-view>
-
-              </view>
-              <!-- 评价 -->
-              <view wx:if="{{activeindex===1}}" class="scroll" >
-                <view wx:for="{{comment}}" wx:key="index" class="flex box a-i-fs">
-                  <view class="duzheBOX">
-                    <image src="{{url+item.author.avatar}}" alt="" class="duzhe"> </image>
-                  </view>
-                  <view class="nr">
-                    <view>{{item.author.nickname}}</view>
-                    <view class="font-s-12 m-t-5">{{item.content}}</view>
-                  </view>
-
-                </view>
-                <view class="t-a-c" wx:if="{{comment.length>=total}}">已经到底了</view>
-              </view>       
-            </scroll-view>
-          </view>
-        </view>
-      </view>
     </view>
   </view>
-  <view wx:if="{{show1}}" bindtap="show1" class="show1">
-    <image src="{{url+data.cover}}"></image>
-  </view>
+</view>
+
+
+<!-- 大图 -->
+<view wx:if="{{show1}}" bindtap="show1" class="show1">
+  <image src="{{url+data.cover}}"></image>
 </view>

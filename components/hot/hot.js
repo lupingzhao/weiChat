@@ -34,7 +34,6 @@ Component({
     },
     // 热词点击
     hotword(e) {
-      console.log(111)
       wx.navigateTo({
         url: '/pages/details/details',
       })
