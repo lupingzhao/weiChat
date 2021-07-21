@@ -1,6 +1,11 @@
 Page({
   data: {
     userInfo: '',
+    obj:{
+      name:'w',
+      age:'11',
+      arr:[11,2,3,4,5,6,7]
+    }
   },
   login() {
     // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认

@@ -1,5 +1,4 @@
 <view bindtap="clrea" class="p-10" wx:if="{{userInfo}}" class="box">
-
   <view class="tx">
     <image src="{{userInfo[1]}}"></image>
   </view>
@@ -10,3 +9,17 @@
 <view class="pos flex jcc" wx:else>
   <view> <button type="primary" size="mini" bindtap="login">授权登陆</button></view>
 </view>
+
+
+<!-- 循环对象 -->
+<!-- <view wx:for="{{obj}}" wx:key="index">
+  <view>{{item}}++++{{index}}</view>
+
+  <view>
+    -------
+    <view wx:for="{{item}}" wx:key="index">
+      <view>{{item}}++++{{index}}</view>
+    </view>
+  </view>
+
+</view> -->
