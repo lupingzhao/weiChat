@@ -65,6 +65,12 @@
           "pathName": "pages/bookCity/bookCity",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/categoryClassification/categoryClassification",
+          "pathName": "pages/categoryClassification/categoryClassification",
+          "query": "data=%7B%22item%22%3A%5B0%2C%22%E5%A5%87%E5%B9%BB%22%2C1%5D%7D",
+          "scene": null
         }
       ]
     }

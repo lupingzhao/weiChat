@@ -1,10 +1,10 @@
-<view class="flex p-10 border-b ">
+<view class="fixed">
+  <view class="flex p-10 border-b ">
   <!-- 大分类 -->
   <view wx:for="{{typeList}}" wx:key='index' class="category font-s-14 {{categoryActive===index?'red':''}}"
     bindtap="categoryActive" data-index="{{[item.id,index]}}">{{item.name}}</view>
-  <!-- 小分类 -->
 </view>
-
+  <!-- 小分类 -->
 <scroll-view scroll-x="true" style="width:100%" class=" scroll flex border-b " wx:if="{{category1.length>1}}">
   <view class="flex category1  font-s-14 ">
     <view wx:for="{{category1}}" wx:key='index' class="category1-1 {{category1Active===index?'red':''}}"
@@ -13,8 +13,11 @@
   </view>
 </scroll-view>
 
+</view>
+
+
 
 <!-- 图书 -->
-<view>
+<view style="margin-top: 151rpx;">
   <goods wx:if="{{data}}" list='{{data}}' total='{{total}}' msg='{{msg}}'></goods>
 </view>
