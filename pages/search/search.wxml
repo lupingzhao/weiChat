@@ -1,10 +1,17 @@
-<view class="fixed">
-  <input type="text" class="ipt" placeholder="请输入关键字" value="{{value}}" bindconfirm="bindKeyInput1"  bindinput="bindKeyInput"
-    confirm-type='search'></input>
-  <image src="/assets/sreach1.png" class="sreach1 {{close===true?'':'close1'}}"></image>
-  <view bindtap="delValue" >
-    <image src="/assets/close.png" class="close  {{close===true?'close1':''}}"></image>
+<view class="fixed ">
+  <view class="ipt flex jcsb">
+    <view style="width: 90%;">
+      <input type="text"  placeholder="请输入关键字" value="{{value}}" bindconfirm="bindKeyInput1"
+        bindinput="bindKeyInput" confirm-type='search'>
+      </input>
+      <image src="/assets/sreach1.png" class="sreach1 {{close===true?'':'close1'}}">
+      </image>
+    </view>
+    <view bindtap="delValue" class="mr-10">
+      <image src="/assets/close.png" class="close  {{close===true?'close1':''}}"></image>
+    </view>
   </view>
+
 </view>
 
 <view wx:if='{{close}}'>
@@ -19,8 +26,8 @@
 
 <view wx:else style=" margin-top: 100rpx">
   <!-- 搜索的页面 -->
-  <goods list='{{list}}' wx:if="{{list.length>0}}" true1='{{true1}}'></goods>
+  <goods list='{{list}}' wx:if="{{list.length>0}}" true1='{{true1}}' total='{{total}}' msg='{{msg}}'></goods>
   <view wx:else class="t-a-c p-10">
-  未搜索到相关记录
+    未搜索到相关记录
   </view>
 </view>

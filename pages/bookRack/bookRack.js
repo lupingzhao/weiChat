@@ -82,13 +82,10 @@ Page({
   },
   // 删除书籍
   delBook(e) {
-    let book = e.currentTarget.dataset.item
-    console.log(e.currentTarget.dataset.item)
     // 删除记录
-    utils.delHistoryOne({
+    utils.delMapOne({
       key: 'rack',
-      value: book,
-      id: '_id'
+      index: e.currentTarget.dataset.item
     })
     this.setData({
       data: utils.getHistory(

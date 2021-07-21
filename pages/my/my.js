@@ -20,24 +20,24 @@ Page({
   },
   // 设置
   clrea() {
-    let _this=this
+    let _this = this
     wx.showActionSheet({
       itemList: ['清楚缓存', '退出登陆'],
       success(res) {
         if (res.tapIndex === 0) {
-          let data=['details','searchHistory','rackHistory']
-          data.map(a=>{
+          let data = ['details', 'searchHistory', 'rackHistory']
+          data.map(a => {
             console.log(a)
             wx.removeStorage({
               key: a,
             })
-          }) 
-        }else{
+          })
+        } else {
           wx.removeStorage({
             key: 'user',
           })
           _this.setData({
-            userInfo:""
+            userInfo: ""
           })
         }
       },
@@ -84,7 +84,11 @@ Page({
 
   onShow: function () {
     // 页面显示
-
+  
+    this.setData({
+      userInfo: wx.getStorageSync('user')
+    })
+    // console.log(wx.getStorageSync('user'))
   },
   onHide: function () {
     // 页面隐藏

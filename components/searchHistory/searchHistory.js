@@ -12,7 +12,8 @@ Component({
    * 组件的初始数据
    */
   data: {
-    searchHistroy: ''
+    searchHistroy: '',
+    show:false
   },
 
   /**
@@ -52,11 +53,14 @@ Component({
       // 获取搜索记录
       if (wx.getStorageSync('user')) {
         this.setData({
-          searchHistroy: utils.getHistory('search')
+          searchHistroy: utils.getHistory('search'),
+          show:true
         })
       } else {
         this.setData({
-          searchHistroy: ''
+          searchHistroy: '',
+          show:false
+
         })
       }
     }

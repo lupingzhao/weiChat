@@ -41,8 +41,8 @@ Component({
     // 换一换
     change() {
       // 生成随机数
-      let a = Math.floor(Math.random() * (this.data.recommended.length - 2))
-      // console.log(this.data.recommended.slice(17, 20))
+      let a = Math.floor(Math.random() * (this.data.recommended.length - 3))
+      // console.log(this.data.recommended.slice(18, 21))
       this.setData({
         recommendedBook: this.data.recommended.slice(a, a + 3)
       })

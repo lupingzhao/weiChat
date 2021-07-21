@@ -47,7 +47,7 @@ export default {
   }) {
     // key 数据名 value 数据值 id判断额属性名是字符串
     let name = key + 'History'
-    let   stu =wx.getStorageSync(name)
+    let stu = wx.getStorageSync(name)
     if (stu) {
       if (id) {
         stu = stu.filter((a) => {
@@ -62,12 +62,32 @@ export default {
         wx.removeStorageSync(name)
       } else {
         wx.setStorageSync(name, stu)
-      }                                                                                                                             
+      }
     } else {
       return
     }
   },
-
+  // 循环里面删除单个 可以传index
+  delMapOne({
+    key,
+    index,
+  }) {
+    // key 数据名 value 数据值 id判断额属性名是字符串
+    let name = key + 'History'
+    let stu = wx.getStorageSync(name)
+    // 根据下标删除
+    if (stu) {
+     stu.splice(index,1)
+      wx.setStorageSync(name, stu)
+      if (stu.length === 0) {
+        wx.removeStorageSync(name)
+      } else {
+        wx.setStorageSync(name, stu)
+      }
+    }else{
+      return
+    }
+  },
   // 获取记录
   // key；储存的名字
   getHistory(

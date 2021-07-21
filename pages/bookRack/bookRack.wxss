@@ -17,7 +17,8 @@
 .box{
   width: 31%;
   font-size: 12px;
-  margin: 1%
+  margin: 1%;
+  margin-bottom: 20rpx;
 }
 .box image{
   width: 100%;
@@ -27,9 +28,8 @@
 }
 .delx{
   position: absolute;
-  top: 0;
-  right: 0;
-
+  top: 5rpx;
+  right: 5rpx;
 }
 .box .icon2{
   width: 60rpx;

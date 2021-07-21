@@ -23,7 +23,7 @@ Page({
   // 排行接口
   rack() {
     api.rank.rankInfo(this.data.id).then(res => {
-      console.log(res)
+      // console.log(res)
       if (res.ok) {
         this.setData({
           list: res.ranking.books,
@@ -56,7 +56,7 @@ Page({
           title: ''
         })
       }
-      console.log(this.data.ranking)
+      // console.log(this.data.ranking)
     }).catch()
 
   },

@@ -63,9 +63,9 @@ export default {
       return http.get('/book/hot-word')
     },
     // 书籍搜索 (分类，书名，作者名)
-    bookSearch(content) {
+    bookSearch(content,start) {
       //@param content 搜索内容
-      return http.get(`/book/fuzzy-search?start=0&limit=30&v=1&query=${content}`)
+      return http.get(`/book/fuzzy-search?start=${start}&limit=30&v=1&query=${content}`)
     }
   },
   rank: {
