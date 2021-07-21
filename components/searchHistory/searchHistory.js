@@ -41,7 +41,7 @@ Component({
     },
     // 清空全部记录
     delAll() {
-      console.log(2222)
+      // console.log(2222)
       wx.removeStorageSync('searchHistory')
       this.setData({
         searchHistroy: utils.getHistory('search')
@@ -50,19 +50,23 @@ Component({
   },
   lifetimes: {
     ready() {
+      this.setData({
+        searchHistroy: utils.getHistory('search'),
+        show:true
+      })
       // 获取搜索记录
-      if (wx.getStorageSync('user')) {
-        this.setData({
-          searchHistroy: utils.getHistory('search'),
-          show:true
-        })
-      } else {
-        this.setData({
-          searchHistroy: '',
-          show:false
+      // if (wx.getStorageSync('user')) {
+      //   this.setData({
+      //     searchHistroy: utils.getHistory('search'),
+      //     show:true
+      //   })
+      // } else {
+      //   this.setData({
+      //     searchHistroy: '',
+      //     show:false
 
-        })
-      }
+      //   })
+      // }
     }
   }
 })

@@ -59,6 +59,12 @@
           "pathName": "pages/search/search",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/bookCity/bookCity",
+          "pathName": "pages/bookCity/bookCity",
+          "query": "",
+          "scene": null
         }
       ]
     }

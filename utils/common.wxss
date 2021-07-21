@@ -234,7 +234,10 @@
 .jcc {
   justify-content: center;
 }
-
+/* 分散排列 居中*/
+.jcsa{
+  justify-content:space-around;
+}
 .jcsb {
   justify-content: space-between;
 }

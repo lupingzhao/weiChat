@@ -27,7 +27,7 @@ Page({
         if (res.tapIndex === 0) {
           let data = ['details', 'searchHistory', 'rackHistory']
           data.map(a => {
-            console.log(a)
+            // console.log(a)
             wx.removeStorage({
               key: a,
             })
@@ -55,7 +55,7 @@ Page({
     //     wx.login({
     //       success: function (res) {
     //         if (res.code) {
-    //           console.log(res)
+    //           // console.log(res)
     //           //发起网络请求
 
     //           wx.request({
